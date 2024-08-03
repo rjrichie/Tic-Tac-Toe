@@ -18,7 +18,6 @@ class Board:
         if self.__board[x][y] == ' ':
             self.__board[x][y] = player.symbol
             self.__num_free_cells -= 1
-            print("Player " + player.name + " has placed a move at (" + str(x) + ", " + str(y) + ")")
             return True
         else:
             print("The cell is already occupied. Please choose another cell.")
@@ -108,8 +107,8 @@ class Board:
         print("\n")
 
     # Draw method that checks if the game is a draw
-    def draw(self):
-        return (self.__num_free_cells == 0) and (not self.check_win())
+    def draw(self, player1, player2):
+        return (self.__num_free_cells == 0) and (not self.check_win(player1, player2))
     
     # Return valid moves in the board
     def get_valid_moves(self):

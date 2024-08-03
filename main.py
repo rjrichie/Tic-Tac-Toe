@@ -39,7 +39,7 @@ while True:
     player1 = Player(input("Enter the name of Player 1 (O): "), 'O')
 
     if mode == "2" or mode == "3":
-        player2 = Player("Bot")
+        player2 = Player("Bot", "X")
     else:
         player2 = Player(input("Enter the name of Player 2 (X): "), 'X')
 
@@ -50,7 +50,7 @@ while True:
 
 print()
 
-# Game loop for mode 1
+# Game loop for mode 1 (Player vs Player)
 while mode == "1":
     # Player 1 turn
     board.printBoard()
@@ -62,7 +62,10 @@ while mode == "1":
     if player2.do_player_move(board, player1):
         break
 
-# Game loop for bot
+    if (board.draw(player1, player2)):
+        break
+
+# Game loop for mode 2 and 3 (Player vs Bot)
 while mode == "2" or mode == "3":
     # Player 1 turn
     board.printBoard()
@@ -77,11 +80,18 @@ while mode == "2" or mode == "3":
     else: # Hard bot
         if player2.do_bot_move_hard(board, player1):
             break
+    
+    if (board.draw(player1, player2)):
+        break
 
     
 board.printBoard()
-player1.result()
-print()
-player2.result()
-print()
+if (not board.draw(player1, player2)):
+    player1.result()
+    print()
+    player2.result()
+    print()
+else:
+    print("The game is a draw.\n")
+
 exitGame()
