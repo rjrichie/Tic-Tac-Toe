@@ -97,7 +97,7 @@ class Player:
             return True
         return False
 
-
+    # Minimax algorithm (Alpha-Beta-Pruning)
     def minimax(self, board, player1, isMaximizingPlayer, depth, alpha, beta, max_depth=5):
         if (board.check_win(self, player1) == player1): # player1 wins
             return -(board.count_free_cells() + 1), None
