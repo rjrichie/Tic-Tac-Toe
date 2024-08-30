@@ -1,8 +1,8 @@
-# TicTacToe_Python
+# Tic-Tac-Tor
 
 Just a small project creating a simple tic tac toe game that can be played on the terminal.
 
-The game has three game modes.
+The game has three game modes and playable on n x n grid.
 
 1. Player vs Player
 2. Player vs Bot (Easy)
