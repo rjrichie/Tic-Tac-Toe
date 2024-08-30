@@ -1,4 +1,4 @@
-# Tic-Tac-Tor
+# Tic-Tac-Toe
 
 Just a small project creating a simple tic tac toe game that can be played on the terminal.
 
